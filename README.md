@@ -37,6 +37,9 @@ https://www.youtube.com/watch?v=99nYjw382Zc&feature=youtu.be<br>
 # Stage Three:
 ## Game installation
 
+Pull the images from Archive.org
+https://archive.org/details/Examu-Exboard-XPe-ROM-archive
+
 ```
 gdd if=ArcanaHeart2.img of=/dev/disk5s2 bs=1M
 gdd if=ArcanaHeart3.img of=/dev/disk5s3 bs=1M
