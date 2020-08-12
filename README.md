@@ -1,5 +1,7 @@
-*Reminder, if you like these repos, fork them so they don't disappear* 
+*Reminder, if you like these repos, fork them so they don't disappear*<br> 
 https://github.com/ArcadeHustle/Examu-Exboard-Multi/fork
+
+THIS IS INCOMPLETE, NOT FOR PUBLIC CONSUMPTION YET! DO NOT USE
 
 Big thanks to Mitsurugi_w, Darksoft, and Brizzo of Arcade Projects for finally allowing this to be published.
 - written by hostile, with supporting information from the community at large!
@@ -28,9 +30,9 @@ gdd if=boot.img of=/dev/disk5 bs=1M
 Tell Brizzo to stop holding out on his copy of Monster Ancient Cline Location Test ROM dump
 DM Mitsurugi_w or 64darksoft for pricing, and cart "conversions". 
 
-https://www.youtube.com/watch?v=7uBmP3_TQi4&feature=youtu.be
-https://www.youtube.com/watch?v=WJDVqyirYko&feature=youtu.be
-https://www.youtube.com/watch?v=99nYjw382Zc&feature=youtu.be
+https://www.youtube.com/watch?v=7uBmP3_TQi4&feature=youtu.be<br>
+https://www.youtube.com/watch?v=WJDVqyirYko&feature=youtu.be<br>
+https://www.youtube.com/watch?v=99nYjw382Zc&feature=youtu.be<br>
 
 # Stage Three:
 ## Game installation
