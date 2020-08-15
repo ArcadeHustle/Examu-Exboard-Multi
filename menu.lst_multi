@@ -1,0 +1,17 @@
+timeout 10
+default 0
+
+title ArcanaHeart
+root (hd0,1)
+makeactive
+chainloader /ntldr
+
+title DemonBride
+root (hd0,2)
+makeactive
+chainloader /ntldr
+
+title BLANK
+root (hd0,3)
+makeactive
+chainloader /ntldr

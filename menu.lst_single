@@ -1,0 +1,7 @@
+timeout 0
+default 0
+
+title FuckADarkSoft
+root (hd0,1)
+makeactive
+chainloader /ntldr
