@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
     else if(cur==1)
     {
         printf("Entry 1 - AH2");
-        fout = fopen("fuckadarksoft", "w");
+        fout = fopen("E:/fuckadarksoft", "w");
         next=2;
         fputc(next,fout);
         fclose(fout);
@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
     else if(cur==2)
     {
         printf("Entry 2 - AH3");
-        fout = fopen("fuckadarksoft", "w");
+        fout = fopen("E:/fuckadarksoft", "w");
         next=3;
         fputc(next,fout);
         fclose(fout);
@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
     else if(cur>2)
     {
         printf("Catch All (Entry 0) - DB1");
-        fout = fopen("fuckadarksoft", "w");
+        fout = fopen("E:/fuckadarksoft", "w");
         next=1;
         fputc(next,fout);
         fclose(fout);
