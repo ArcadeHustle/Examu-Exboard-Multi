@@ -11,15 +11,15 @@ int main(int argc, char* argv[])
     FILE *fout;
     int cur;
     int next;
-    if( access( "E:\fuckadarksoft", F_OK ) != -1 )
+    if( access( "E:/fuckadarksoft", F_OK ) != -1 )
     {
-    	fin = fopen("E:\fuckadarksoft", "r");
+    	fin = fopen("E:/fuckadarksoft", "r");
     	cur = fgetc(fin);
     	fclose(fin);
     }
     else
     {
-        fout = fopen("E:\fuckadarksoft", "w");
+        fout = fopen("E:/fuckadarksoft", "w");
         cur = 0;
         next=1;
         fputc(next,fout);
@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
     if(cur==0)
     {
         printf("Entry 0 - DB1");
-        fout = fopen("E:\fuckadarksoft", "w");
+        fout = fopen("E:/fuckadarksoft", "w");
         next=1;
         fputc(next,fout);
         fclose(fout);
