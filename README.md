@@ -48,3 +48,44 @@ gdd if=DemonBride.img of=/dev/disk5s5 bs=1M
 gdd if=MonsterAncientCline_brizzo2020.img of=/dev/disk5s6 bs=1M
 ```
 
+Edit the default registry entry that launches the games, and point it to the multi loader
+
+```
+$ cd /mnt/multidrive/WINDOWS/system32/config
+$ cp SOFTWARE SOFTWARE.bak
+$ chntpw -e SOFTWARE
+
+chntpw version 0.99.6 110511 , (c) Petter N Hagen
+Hive <SOFTWARE> name (from header): <emRoot\System32\Config\SOFTWARE>
+ROOT KEY at offset: 0x001020 * Subkey indexing type is: 686c <lh>
+File size 5242880 [500000] bytes, containing 1226 pages (+ 1 headerpage)
+Used for data: 96634/5139760 blocks/bytes, unused: 827/10640 blocks/bytes.
+
+Simple registry editor. ? for help.
+
+> ed \Microsoft\Windows NT\CurrentVersion\Winlogon\Shell
+
+EDIT: <\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell> of type REG_SZ with length 22 [0x16]
+[ 0]: C:\DB1.exe
+
+Now enter new strings, one by one.
+Enter nothing to keep old.
+[ 0]: C:\DB1.exe
+-> C:\FAD.exe
+newkv->len: 22
+> cat \Microsoft\Windows NT\CurrentVersion\Winlogon\Shell
+Value <\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell> of type REG_SZ, data length 22 [0x16]
+C:\FAD.exe
+> q
+
+Hives that have changed:
+ #  Name
+ 0  <SOFTWARE>
+Write hive files? (y/n) [n] : y
+ 0  <SOFTWARE> - OK
+```
+
+Copy the multi loader to the root of the drive. 
+```
+$ cp ~/main.exe /mnt/multidrive/FAD.exe
+```
