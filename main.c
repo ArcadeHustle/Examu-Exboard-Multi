@@ -33,6 +33,7 @@ int main(int argc, char* argv[])
         next=1;
         fputc(next,fout);
         fclose(fout);
+        SetCurrentDirectory("C:");
         execl("C:/DB1.exe","DB1",0);
     }
     else if(cur==1)
@@ -62,11 +63,13 @@ int main(int argc, char* argv[])
         next=1;
         fputc(next,fout);
         fclose(fout);
+        SetCurrentDirectory("C:");
         execl("C:/DB1.exe","DB1",0);
     }
     else
     {
         printf("Makes no sense cur is %x\n, Launch DB1",cur);
+        SetCurrentDirectory("C:");
         execl("C:/DB1.exe","DB1",0);
     }
 
