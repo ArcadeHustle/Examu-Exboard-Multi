@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
         fputc(next,fout);
         fclose(fout);
         SetCurrentDirectory("C:");
-        execl("C:/DB1.exe","DB1",0);
+        system("C:/DB1.exe");
     }
     else if(cur==1)
     {
@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
         fputc(next,fout);
         fclose(fout);
         SetCurrentDirectory("D:");
-        execl("D:/AH2.exe","AH2",0);
+        system("D:/AH2.exe");
     }
     else if(cur==2)
     {
@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
         fputc(next,fout);
         fclose(fout);
         SetCurrentDirectory("E:");
-        execl("E:/AH3.exe","AH3",0);
+        system("E:/AH3.exe");
     }
     else if(cur>2)
     {
@@ -64,13 +64,13 @@ int main(int argc, char* argv[])
         fputc(next,fout);
         fclose(fout);
         SetCurrentDirectory("C:");
-        execl("C:/DB1.exe","DB1",0);
+        system("C:/DB1.exe");
     }
     else
     {
         printf("Makes no sense cur is %x\n, Launch DB1",cur);
         SetCurrentDirectory("C:");
-        execl("C:/DB1.exe","DB1",0);
+        system("C:/DB1.exe");
     }
 
 }
