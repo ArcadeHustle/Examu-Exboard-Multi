@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <unistd.h>
+#include <windows.h>
 
 int main(int argc, char* argv[])
 {
@@ -41,6 +42,7 @@ int main(int argc, char* argv[])
         next=2;
         fputc(next,fout);
         fclose(fout);
+        SetCurrentDirectory("D:");
         execl("D:/AH2.exe","AH2",0);
     }
     else if(cur==2)
@@ -50,6 +52,7 @@ int main(int argc, char* argv[])
         next=3;
         fputc(next,fout);
         fclose(fout);
+        SetCurrentDirectory("E:");
         execl("E:/AH3.exe","AH3",0);
     }
     else if(cur>2)
