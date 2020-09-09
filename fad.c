@@ -1,5 +1,5 @@
 // apt-get install binutils-mingw-w64-i686 g++-mingw-w64-i686 gcc-mingw-w64-i686
-// i686-w64-mingw32-gcc main.c -o main.exe --static
+// i686-w64-mingw32-gcc fad.c -o fad.exe --static
 
 #include <stdio.h>
 #include <unistd.h>
