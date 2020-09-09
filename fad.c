@@ -8,67 +8,80 @@
 int main(int argc, char* argv[])
 {
     printf("FuckA DarkSoft\n");
+
     FILE *fin;
     FILE *fout;
     int cur;
     int next;
+
+    // if the trigger file exists lets rock out
+    // read the current entry to start.
     if( access( "E:/fuckadarksoft", F_OK ) != -1 )
     {
     	fin = fopen("E:/fuckadarksoft", "r");
     	cur = fgetc(fin);
     	fclose(fin);
     }
+    // if trigger file not present, write one. Set entry to 1 (0x31)
+    // write base entry to start next boot on 2 (0x32)
     else
     {
         fout = fopen("E:/fuckadarksoft", "w");
-        cur = 0;
-        next=1;
+        cur = 31;
+        next=32;
         fputc(next,fout);
         fclose(fout);
     }
-    if(cur==0)
+
+    // Override the round robbin boot process, force static entry
+    if( access( "E:/fuckamitsutoo", F_OK ) != -1 )
     {
-        printf("Entry 0 - DB1");
+        fin = fopen("E:/fuckamitsutoo", "r");
+        cur = fgetc(fin);
+    }
+    // Entry 1 (0x31)
+    if(cur==31)
+    {
+        printf("Entry 1 - DB1");
         fout = fopen("E:/fuckadarksoft", "w");
-        next=1;
+        next=32;
         fputc(next,fout);
         fclose(fout);
         SetCurrentDirectory("C:");
         system("C:/DB1.exe");
     }
-    else if(cur==1)
+    // Entry 2 (0x32)
+    else if(cur==32)
     {
-        printf("Entry 1 - AH2");
+        printf("Entry 2 - AH2");
         fout = fopen("E:/fuckadarksoft", "w");
-        next=2;
+        next=33;
         fputc(next,fout);
         fclose(fout);
         SetCurrentDirectory("D:");
         system("D:/AH2.exe");
     }
-    else if(cur==2)
+    // Entry 3 (0x33)
+    else if(cur==33)
     {
-        printf("Entry 2 - AH3");
+        printf("Entry 3 - AH3");
         fout = fopen("E:/fuckadarksoft", "w");
-        next=3;
+        next=31;
         fputc(next,fout);
         fclose(fout);
         SetCurrentDirectory("E:");
         system("E:/AH30.exe");
     }
-    else if(cur>2)
+    // Sanity check on numeric range
+    // set next boot to entry 2, and boot entry 1 if boot entry doesn't make sense. 
+    else if( cur>33 || cur<31 )
     {
-        printf("Catch All (Entry 0) - DB1");
+        printf("Catch All - DB1");
         fout = fopen("E:/fuckadarksoft", "w");
-        next=1;
+        cur = 31;
+        next=32;
         fputc(next,fout);
         fclose(fout);
-        SetCurrentDirectory("C:");
-        system("C:/DB1.exe");
-    }
-    else
-    {
-        printf("Makes no sense cur is %x\n, Launch DB1",cur);
         SetCurrentDirectory("C:");
         system("C:/DB1.exe");
     }
