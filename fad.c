@@ -27,11 +27,12 @@ int main(int argc, char* argv[])
     else
     {
         fout = fopen("E:/fuckadarksoft", "w");
-        cur = 31;
-        next=32;
+        cur = 0x31;
+        next=0x32;
         fputc(next,fout);
         fclose(fout);
     }
+
 
     // Override the round robbin boot process, force static entry
     if( access( "E:/fuckamitsutoo", F_OK ) != -1 )
@@ -39,34 +40,36 @@ int main(int argc, char* argv[])
         fin = fopen("E:/fuckamitsutoo", "r");
         cur = fgetc(fin);
     }
+
+
     // Entry 1 (0x31)
-    if(cur==31)
+    if(cur==0x31)
     {
         printf("Entry 1 - DB1");
         fout = fopen("E:/fuckadarksoft", "w");
-        next=32;
+        next=0x32;
         fputc(next,fout);
         fclose(fout);
         SetCurrentDirectory("C:");
         system("C:/DB1.exe");
     }
     // Entry 2 (0x32)
-    else if(cur==32)
+    else if(cur==0x32)
     {
         printf("Entry 2 - AH2");
         fout = fopen("E:/fuckadarksoft", "w");
-        next=33;
+        next=0x33;
         fputc(next,fout);
         fclose(fout);
         SetCurrentDirectory("D:");
         system("D:/AH2.exe");
     }
     // Entry 3 (0x33)
-    else if(cur==33)
+    else if(cur==0x33)
     {
         printf("Entry 3 - AH3");
         fout = fopen("E:/fuckadarksoft", "w");
-        next=31;
+        next=0x31;
         fputc(next,fout);
         fclose(fout);
         SetCurrentDirectory("E:");
@@ -74,12 +77,12 @@ int main(int argc, char* argv[])
     }
     // Sanity check on numeric range
     // set next boot to entry 2, and boot entry 1 if boot entry doesn't make sense. 
-    else if( cur>33 || cur<31 )
+    else if( cur>0x33 || cur<0x31) 
     {
         printf("Catch All - DB1");
         fout = fopen("E:/fuckadarksoft", "w");
-        cur = 31;
-        next=32;
+        cur = 0x31;
+        next=0x32;
         fputc(next,fout);
         fclose(fout);
         SetCurrentDirectory("C:");
