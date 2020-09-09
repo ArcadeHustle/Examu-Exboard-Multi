@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
         fputc(next,fout);
         fclose(fout);
         SetCurrentDirectory("E:");
-        system("E:/AH3.exe");
+        system("E:/AH30.exe");
     }
     else if(cur>2)
     {
