@@ -87,5 +87,5 @@ Write hive files? (y/n) [n] : y
 
 Copy the multi loader to the root of the drive. 
 ```
-$ cp ~/main.exe /mnt/multidrive/FAD.exe
+$ cp ~/fad.exe /mnt/multidrive/FAD.exe
 ```
