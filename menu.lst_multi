@@ -1,17 +1,17 @@
-timeout 10
-default 0
+default saved
+timeout 0
 
-title ArcanaHeart
-root (hd0,1)
-makeactive
-chainloader /ntldr
+title FuckADarkSoft Arcana Heart 2! 
+rootnoverify (hd0,0)
+chainloader (hd0,0)/ntldr
+savedefault 1
 
-title DemonBride
-root (hd0,2)
-makeactive
-chainloader /ntldr
+title FuckADarkSoft Demon Bride! 
+rootnoverify (hd0,1)
+chainloader (hd0,1)/ntldr
+savedefault 2
 
-title BLANK
-root (hd0,3)
-makeactive
-chainloader /ntldr
+title FuckADarkSoft Arcana Heart 3! 
+rootnoverify (hd0,2)
+chainloader (hd0,2)/ntldr
+savedefault 0
