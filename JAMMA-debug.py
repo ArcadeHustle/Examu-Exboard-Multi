@@ -101,7 +101,7 @@ def buttons(b0, b1, b2, b3):
 
 while True:
     ser_bytes = ser.read_until('\x42')
-    bytearray.fromhex( binascii.hexlify(ser_bytes) )
+    x = bytearray.fromhex( binascii.hexlify(ser_bytes) )
 #    x = bytearray.fromhex("76fd082300010042" )
     b0 = x[3]
     b1 = x[4]
