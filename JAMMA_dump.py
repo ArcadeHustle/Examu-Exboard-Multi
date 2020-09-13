@@ -27,22 +27,39 @@ ser = serial.Serial(
 while True:
     ser_bytes = ser.read_until('\x42')
 
-    if len(ser_bytes) < 2:
+    if len(ser_bytes) < 1:
         continue
+ 
+    if ser_bytes ==      '00\x00\xff':
+        print("<---- reboot")
 
-#    print(binascii.hexlify(ser_bytes[0:7]))
+    # 76fa057042        
+    elif ser_bytes ==      '\x76\xfa\x05\x70\x42':
+        print("<---- license response?")
 
-    if ser_bytes[-2] == '\x00':
-        # 76fd080000000042 - Idle stick input 
-        if ser_bytes[0:7] == '\x76\xfd\x08\x00\x00\x00\x00':
-              continue
-    	      print(binascii.hexlify(ser_bytes))
-        else:
-    	      print(binascii.hexlify(ser_bytes))
-    elif ser_bytes[-2] == '\x20':
-    	print(binascii.hexlify(ser_bytes))
-    elif ser_bytes[-2] == '\x70':
-    	print(binascii.hexlify(ser_bytes))
+    # 76fd080000000042 - Idle stick input 
+    elif ser_bytes[0:8] == '\x76\xfd\x08\x00\x00\x00\x00\x42':
+        continue
+        print("<---- idle sticks")
+
+    elif ser_bytes[0:2] == '\x76\xfd':
+        print("<---- " + binascii.hexlify(ser_bytes))
+
+    elif ser_bytes[0:2] == '\x76\x01':
+        print("<---- " + binascii.hexlify(ser_bytes))
+
+    elif ser_bytes[0:2] == '\xa5\xfa':
+        print("----> " + binascii.hexlify(ser_bytes))
+
+    elif ser_bytes[0:2] == '\xa5\xfb':
+        print("----> " + binascii.hexlify(ser_bytes))
+
+    elif ser_bytes[0:2] == '\xa5\xfe':
+        print("----> " + binascii.hexlify(ser_bytes))
+
+    elif ser_bytes[0:2] == '\xa5\x01':
+        print("----> " + binascii.hexlify(ser_bytes))
+
     else:
     	print(binascii.hexlify(ser_bytes))
     
