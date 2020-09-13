@@ -30,12 +30,16 @@ while True:
     if len(ser_bytes) < 1:
         continue
  
-    if ser_bytes ==      '00\x00\xff':
+    if ser_bytes ==      '\x00\x00\xff':
         print("<---- reboot")
 
     # 76fa057042        
     elif ser_bytes ==      '\x76\xfa\x05\x70\x42':
         print("<---- license response?")
+
+    elif '\x5a\x76\xfa\x05\x70\x42' in ser_bytes:
+        if ser_bytes[0] == '\xa5':
+           print("---->" + binascii.hexlify(ser_bytes)[0:-6] )
 
     # 76fd080000000042 - Idle stick input 
     elif ser_bytes[0:8] == '\x76\xfd\x08\x00\x00\x00\x00\x42':
@@ -63,6 +67,4 @@ while True:
     else:
     	print(binascii.hexlify(ser_bytes))
     
- 
-
 
